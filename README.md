@@ -114,7 +114,7 @@ Changing a prop re-renders the widget. `mountConverter()` and `mountOfficialRate
 
 ## 🔑 Get your API key
 
-The widgets work without a key. For real-time rates in the converter, [register for a free API key](https://allratestoday.com/register). A key in front-end code is visible to visitors; the widget uses a dedicated endpoint that only returns single-pair rates.
+The widgets work without a key. For real-time rates in the converter, [register for a free API key](https://allratestoday.com/register). A key in front-end code is visible to visitors, so anyone can copy it and use your quota. Watch usage in your [dashboard](https://allratestoday.com/profile) and rotate the key there if needed.
 
 ## 🔗 Links
 
