@@ -1,0 +1,19 @@
+---
+// Official central-bank or tax-authority rate, with its publication date.
+interface Props {
+  bank?: string;
+  source?: string;
+  target?: string;
+  theme?: 'light' | 'dark';
+  class?: string;
+}
+const { bank = 'ecb', source = 'USD', target = 'EUR', theme, class: className } = Astro.props;
+---
+<div
+  class:list={['art-official-rate', className]}
+  data-bank={bank}
+  data-source={source}
+  data-target={target}
+  data-theme={theme}
+></div>
+<script is:inline async src="https://allratestoday.com/official-rates.js"></script>

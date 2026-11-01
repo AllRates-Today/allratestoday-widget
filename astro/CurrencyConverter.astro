@@ -1,0 +1,21 @@
+---
+// Currency converter. Renders static markup plus the hosted script; no client JS framework.
+interface Props {
+  base?: string;
+  target?: string;
+  amount?: number | string;
+  theme?: 'light' | 'dark';
+  apiKey?: string;
+  class?: string;
+}
+const { base = 'USD', target = 'EUR', amount, theme, apiKey, class: className } = Astro.props;
+---
+<div
+  class:list={['art-currency-widget', className]}
+  data-base={base}
+  data-target={target}
+  data-amount={amount}
+  data-theme={theme}
+  data-api-key={apiKey}
+></div>
+<script is:inline async src="https://allratestoday.com/widget.js"></script>
