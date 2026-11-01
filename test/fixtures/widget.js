@@ -92,7 +92,29 @@
     });
   }
 
+  // Cross rate from the ECB table (1 EUR = value QUOTE), so keyless embeds
+  // can convert any pair the ECB covers, not only pairs that include EUR.
+  function ecbCross(table, source, target) {
+    if (!table || !table.rates) return null;
+    var units = { EUR: 1 };
+    for (var i = 0; i < table.rates.length; i++) {
+      var r = table.rates[i];
+      if (r.base === 'EUR' && r.quote && typeof r.value === 'number' && r.value > 0) units[r.quote] = r.value;
+    }
+    if (!units[source] || !units[target]) return null;
+    return { rate: units[target] / units[source], date: table.rate_date || null };
+  }
+
   function fetchRate(source, target, apiKey) {
+    if (!apiKey) {
+      return getEcbTable().then(function (table) {
+        return ecbCross(table, source, target) || fetchRateFromApi(source, target, apiKey);
+      });
+    }
+    return fetchRateFromApi(source, target, apiKey);
+  }
+
+  function fetchRateFromApi(source, target, apiKey) {
     // Keyed embeds get real-time mid-market rates + dedicated quota; keyless
     // embeds use the open central-bank endpoint (official ECB reference
     // rates, attribution link required).

@@ -67,6 +67,16 @@ test('mountConverter loads widget.js once and renders the converter with credit 
   assert.equal(b.element.isConnected, true);
 });
 
+test('keyless converter computes cross rates from the ECB table (GBP to JPY)', async () => {
+  const w = await setup();
+  const { mountConverter } = await import(`../index.js?x${Date.now()}`);
+  const h = mountConverter(w.document.getElementById('app'), { base: 'GBP', target: 'JPY', amount: 250 });
+  await h.ready;
+  const out = await until(() => { const t = h.element.shadowRoot.querySelector('.result .amt')?.textContent; return t && /\d/.test(t) && t; });
+  // Fixture: 1 EUR = 0.8338 GBP = 175.68 JPY, so 250 GBP = 52,674.5 JPY.
+  assert.match(out.replace(/[^\d.]/g, ''), /^52674\.5/);
+});
+
 test('mountOfficialRate renders the rate, its date and the credit link', async () => {
   const w = await setup();
   const { mountOfficialRate } = await import(`../index.js?o${Date.now()}`);
