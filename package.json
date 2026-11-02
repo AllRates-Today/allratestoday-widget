@@ -1,6 +1,6 @@
 {
   "name": "allratestoday-widget",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Free embeddable currency converter and official central-bank rate widgets for React, Vue, Astro and plain HTML. No API key needed.",
   "type": "module",
   "main": "./index.js",
