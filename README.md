@@ -123,6 +123,7 @@ The widgets work without a key. For real-time rates in the converter, [register 
 - [Download central bank rates](https://allratestoday.com/download-central-bank-rates/) — every bank's tables as Excel, CSV or JSON
 - [API documentation](https://allratestoday.com/docs/) · [Register (Free)](https://allratestoday.com/register) · [Dashboard](https://allratestoday.com/profile) · [Pricing](https://allratestoday.com/pricing/)
 - [Status](https://allratestoday.com/status)
+- [ChatGPT app](https://chatgpt.com/plugins/plugin_asdk_app_6ae1e76098f48191a285ac3f5ab7a83b) — ask ChatGPT for live and official central bank rates
 - [GitHub](https://github.com/AllRates-Today/allratestoday-widget)
 
 ## 📜 License
