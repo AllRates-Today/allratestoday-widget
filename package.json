@@ -50,6 +50,7 @@
     "test": "node --test test/*.test.js"
   },
   "keywords": [
+    "exchange-rate-api",
     "currency-converter",
     "currency-widget",
     "exchange-rate-widget",
