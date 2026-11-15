@@ -121,6 +121,7 @@ The widgets work without a key. For real-time rates in the converter, [register 
 - **Website:** [allratestoday.com](https://allratestoday.com)
 - [Widget demo and generator](https://allratestoday.com/widget/) · [Official rates widget](https://allratestoday.com/official-rates-widget/)
 - [Download central bank rates](https://allratestoday.com/download-central-bank-rates/) — every bank's tables as Excel, CSV or JSON
+- [Bank Exchange Rate API](https://allratestoday.com/bank-exchange-rate-api/) — live buy and sell rates from 1,200+ commercial banks in 120+ countries · [npm](https://www.npmjs.com/package/bank-exchange-rates) · [GitHub](https://github.com/AllRates-Today/bank-exchange-rates)
 - [API documentation](https://allratestoday.com/docs/) · [Register (Free)](https://allratestoday.com/register) · [Dashboard](https://allratestoday.com/profile) · [Pricing](https://allratestoday.com/pricing/)
 - [Status](https://allratestoday.com/status)
 - [ChatGPT app](https://chatgpt.com/plugins/plugin_asdk_app_6ae1e76098f48191a285ac3f5ab7a83b) — ask ChatGPT for live and official central bank rates
